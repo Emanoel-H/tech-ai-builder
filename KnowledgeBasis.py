@@ -36,5 +36,5 @@ sistema = SistemaEspecialista(base)
 sistema.inferir()
 
 print("Fatos inferidos:")
-print(base.fatos)
-# print(base.regras)
+# print(base.fatos)
+print(base.regras.pop(0))
