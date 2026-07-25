@@ -1,8 +1,7 @@
-nome = "Emanoel HENRique    da faina         "
-sobrenome = "EMANOEL HENRIQUE DA FAINA"
-print(sobrenome)
+nome = input("Digite seu nome: ")
+print(nome)
 
-print("Em lower case: \n" +sobrenome.lower())
+print("Em lower case: \n" +nome.lower())
 
 print(nome)
 print("Em upper case: \n" +nome.upper())
