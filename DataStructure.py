@@ -10,7 +10,7 @@ i = 0
 
 while i < len(means_list):
     means_list[i] = means_list[i] + 1
-    
+
     means_list[i] = means_list[i] = 10 if means_list[i] > 10 else means_list[i]
 
     if means_list[i] < 5:
