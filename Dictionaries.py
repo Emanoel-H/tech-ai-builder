@@ -19,4 +19,7 @@ for name in list(students.keys()):
         students.__delitem__(name)
 
 
-print(students)
+for key, value in students.items():
+    print(f"The student {key} has the mean {value}")
+
+# print(students)
