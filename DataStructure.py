@@ -1,6 +1,10 @@
-means_list = [8.9, 7.5, 4.2, 1.4, 9.5]
+means_list = []
+stop = "yes"
 
-means_list.append(4.2)
+while stop == "yes":
+    value = float(input("Enter a mean number: "))
+    means_list.append(value)
+    stop = input("Would you like to continue (yes/no): ")
 
 i = 0
 
