@@ -1,5 +1,7 @@
 means_list = [8.9, 7.5, 4.2, 1.4, 9.5]
 
+means_list.append(4.2)
+
 i = 0
 
 while i < len(means_list):
