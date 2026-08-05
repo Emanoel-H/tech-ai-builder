@@ -1,7 +1,5 @@
 def correct_text (txt):
-    new_txt = txt.upper()
-    list_text = new_txt.split()
-    return " ".join(list_text)
+    return " ".join(txt.upper().split())
 
 nome = input("Digite seu nome: ")
 print(correct_text(nome))
