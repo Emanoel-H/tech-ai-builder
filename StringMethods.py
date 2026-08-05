@@ -1,10 +1,9 @@
 def correct_text (txt):
-    new_txt = txt.strip().upper().replace(" ", "")
-    return new_txt
+    new_txt = txt.upper()
+    list_text = new_txt.split()
+    return " ".join(list_text)
 
 nome = input("Digite seu nome: ")
-print(nome)
-
 print(correct_text(nome))
 
 print("Em lower case: \n" +nome.lower())
