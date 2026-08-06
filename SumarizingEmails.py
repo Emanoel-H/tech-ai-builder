@@ -49,9 +49,9 @@ def summarize_emails(list_of_emails):
         prompt = "I want you to summarize in a few words what the following e-mail want to say: \n " + email
         response = client.models.generate_content(model="gemini-3.5-flash", contents= prompt)
 
-        print(f"{i + 1}º Email: {response.text}")
         summary_list.append(f"{i + 1}º Email: {response.text}")
-        print("-" * 50)
+        # print(f"{i + 1}º Email: {response.text}")
+        # print("-" * 50)
 
     return summary_list
 
@@ -61,7 +61,7 @@ def summarize_emails(list_of_emails):
 summaries = summarize_emails(emails)
 
 path = str(os.getenv("DESKTOP")) + "\\emails.txt"
-with open(path , "w", encoding="utf-8") as file:
+with open(path, "w", encoding="utf-8") as file:
     for email in summaries:
         file.write(f"{email}\n")
 
