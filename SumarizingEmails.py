@@ -54,12 +54,12 @@ def summarize_emails(list_of_emails):
         summary_list.append(f"{i + 1}º Email: {response.text}")
         print("-" * 50)
 
-        return summary_list
+    return summary_list
 
     # mails.append(f"Sender: {sender} \nMessage: {body}\n")
     # prompt = "I want you to summarize in a few words what the following e-mails want to say: \n ".join(mails)
 
 
 
-summarize_emails(emails)
+summaries = summarize_emails(emails)
 
