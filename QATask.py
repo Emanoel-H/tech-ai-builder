@@ -22,7 +22,7 @@ client = genai.Client()
 q_a_list = {}
 q_a_list["questions"] = "answers"
 for question in questions:
-    response = client.models.generate_content(model="gemini-3.5-flash", contents= question)
+    response = client.models.generate_content(model="gemini-3.5-flash", contents= "Answers the following question in one line: "+ question)
 
     q_a_list[question] = response.text
 
