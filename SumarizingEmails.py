@@ -65,3 +65,5 @@ with open(path, "w", encoding="utf-8") as file:
     for email in summaries:
         file.write(f"{email}\n")
 
+with open(path, "r", encoding="utf-8") as file:
+    print(file.read())
