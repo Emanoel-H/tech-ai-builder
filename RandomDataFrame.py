@@ -26,3 +26,6 @@ print(df_produtos[(df_produtos["Categoria do produto"] == "Livros") & (df_produt
 
 print("\n")
 print(df_produtos.iloc[15])
+
+print("\n")
+print(df_produtos.loc[15, "Preço do produto"])
