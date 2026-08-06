@@ -37,6 +37,9 @@ with open(path_q_a, "w", encoding="utf-8") as file:
         file.write(f"{q}, {a}\n")
 
 Q_and_A_DataFrame = pd.DataFrame(q_a_list)
-print(Q_and_A_DataFrame)
+
+Q_and_A_DataFrame.to_csv(path_q_a, index=False, encoding="utf-8")
+
+print(pd.read_csv(path_q_a))
 
 # print(pd.read_csv(path_q_a).head())
