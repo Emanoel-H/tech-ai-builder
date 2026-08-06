@@ -4,7 +4,6 @@ import csv
 from google import genai
 from pathlib import Path
 
-
 questions = ["O que é IA?",
 "Quantos anos tinha Jesus quando iniciou seu ministério?",
 "De qual filme o Homem Aranha pega uma referência pra salvar o Doutor Estranho em Guerra Infinita?"]
@@ -38,4 +37,3 @@ with open(path_q_a, "w", encoding="utf-8") as file:
         file.write(f"{q}, {a}\n")
 
 print(pd.read_csv(path_q_a).head())
-
