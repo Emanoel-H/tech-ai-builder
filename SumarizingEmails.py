@@ -60,7 +60,8 @@ def summarize_emails(list_of_emails):
 
 summaries = summarize_emails(emails)
 
-with open("C:\Users\henri\Desktop\emails.txt", "w", encoding="utf-8") as file:
+path = str(os.getenv("DESKTOP")) + "\\emails.txt"
+with open(path , "w", encoding="utf-8") as file:
     for email in summaries:
         file.write(f"{email}\n")
 
