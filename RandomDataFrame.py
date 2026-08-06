@@ -21,4 +21,5 @@ df_produtos = pd.DataFrame({
 })
 
 # Exibindo as primeiras linhas do DataFrame
-print(df_produtos.head())
+# print(df_produtos.head())
+print(df_produtos[df_produtos["Categoria do produto"] == "Livros"])
