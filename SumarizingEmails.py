@@ -1,6 +1,7 @@
 import os
 
 from google import genai
+from rich import prompt
 
 emails = [
     {
@@ -36,20 +37,24 @@ emails = [
 ]
 
 def summarize_emails(list_of_emails):
-    mails = []
-    for message in list_of_emails:
+    # mails = []
+    os.environ["GEMINI_API_KEY"] = str(os.getenv("GEMINI_API_KEY"))
+    client = genai.Client()
+
+    for i, message in enumerate(list_of_emails):
         body = message["body"]
         sender = message["sender"]
 
-        mails.append(f"Sender: {sender} \nMessage: {body}\n")
+        email = f"Sender: {sender} \nMessage: {body}\n"
+        prompt = "I want you to summarize in a few words what the following e-mail want to say: \n " + email
+        response = client.models.generate_content(model="gemini-3.5-flash", contents= prompt)
 
-    prompt = "I want you to summarize in a few words what the following e-mails want to say: \n ".join(mails)
+        print(f"{i + 1}º Email: {response.text}")
+        print("-" * 50)
 
-    os.environ["GEMINI_API_KEY"] = str(os.getenv("GEMINI_API_KEY"))
-    client = genai.Client()
-    response = client.models.generate_content(model="gemini-3.5-flash", contents= prompt)
+    # mails.append(f"Sender: {sender} \nMessage: {body}\n")
+    # prompt = "I want you to summarize in a few words what the following e-mails want to say: \n ".join(mails)
 
-    print(response.text)
 
 
 summarize_emails(emails)
