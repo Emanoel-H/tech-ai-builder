@@ -41,6 +41,7 @@ def summarize_emails(list_of_emails):
     os.environ["GEMINI_API_KEY"] = str(os.getenv("GEMINI_API_KEY"))
     client = genai.Client()
 
+    summary_list = []
     for i, message in enumerate(list_of_emails):
         body = message["body"]
         sender = message["sender"]
@@ -50,7 +51,10 @@ def summarize_emails(list_of_emails):
         response = client.models.generate_content(model="gemini-3.5-flash", contents= prompt)
 
         print(f"{i + 1}º Email: {response.text}")
+        summary_list.append(f"{i + 1}º Email: {response.text}")
         print("-" * 50)
+
+        return summary_list
 
     # mails.append(f"Sender: {sender} \nMessage: {body}\n")
     # prompt = "I want you to summarize in a few words what the following e-mails want to say: \n ".join(mails)
@@ -58,3 +62,4 @@ def summarize_emails(list_of_emails):
 
 
 summarize_emails(emails)
+
