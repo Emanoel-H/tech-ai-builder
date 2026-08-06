@@ -34,3 +34,6 @@ eletronicos = df_produtos[df_produtos["Categoria do produto"] == "Eletrônicos"]
 
 print(df_produtos.loc[eletronicos.index, ["Nome do produto", "Preço do produto"]])
 
+df_produtos.loc[eletronicos.index, "Categoria do produto"] = "tech"
+
+print(df_produtos["Categoria do produto"].unique())
