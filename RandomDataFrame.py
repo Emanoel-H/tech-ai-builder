@@ -29,3 +29,8 @@ print(df_produtos.iloc[15])
 
 print("\n")
 print(df_produtos.loc[15, "Preço do produto"])
+
+eletronicos = df_produtos[df_produtos["Categoria do produto"] == "Eletrônicos"]
+
+print(df_produtos.loc[eletronicos.index, ["Nome do produto", "Preço do produto"]])
+
