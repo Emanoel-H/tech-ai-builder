@@ -23,3 +23,6 @@ df_produtos = pd.DataFrame({
 # Exibindo as primeiras linhas do DataFrame
 # print(df_produtos.head())
 print(df_produtos[(df_produtos["Categoria do produto"] == "Livros") & (df_produtos["Avaliação do produto"] > 3)])
+
+print("\n")
+print(df_produtos.iloc[15])
