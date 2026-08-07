@@ -33,12 +33,12 @@ with open(path_q_a, "w", encoding="utf-8") as file:
     # for q, a in q_a_list.items():
     #     writer.writerow([q, a])
 
-    for q, a in q_a_list:
+    for q, a in q_a_list.items():
         file.write(f"{q}, {a}\n")
 
-Q_and_A_DataFrame = pd.DataFrame(q_a_list)
-
-Q_and_A_DataFrame.to_csv(path_q_a, index=False, encoding="utf-8")
+# Q_and_A_DataFrame = pd.DataFrame(q_a_list)
+#
+# Q_and_A_DataFrame.to_csv(path_q_a, index=False, encoding="utf-8")
 
 print(pd.read_csv(path_q_a))
 
