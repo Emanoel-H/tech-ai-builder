@@ -1,6 +1,9 @@
 try:
     age = int(input("How old are you? "))
 
+    magic_division = 25 / age
+
+    print(magic_division)
     # people = 3
     #
     # people_2 = "John, Mary and Joseph"
@@ -11,3 +14,5 @@ except ValueError as ve:
     print("Error details:", ve)
 except TypeError:
     print("Oops! you cannot sum a number with a string!")
+except Exception as ex:
+    print("Error details:", ex)
